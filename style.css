@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Pacifico&display=swap');
+
+:root {
+  --pink: #ff6f9d;
+  --deep: #c94b77;
+  --cream: #fff8ef;
+  --ink: #573b46;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(#ffe6ef, #fff8ef);
+  color: var(--ink);
+  font-family: "DM Sans", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+.screen {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 18px;
+  position: relative;
+  text-align: center;
+}
+
+.hero {
+  background:
+    radial-gradient(circle at 50% 25%, #fff 0, #ffe8f0 38%, #ffd4e4 100%);
+  overflow: hidden;
+}
+
+h1, h2 {
+  margin: .2em 0;
+  line-height: 1.02;
+}
+
+h1 {
+  font-size: clamp(3rem, 10vw, 6.5rem);
+}
+
+h1 span,
+h2 span {
+  font-family: Pacifico, cursive;
+  color: var(--deep);
+  font-weight: 400;
+}
+
+h2 {
+  font-size: clamp(2.2rem, 7vw, 4rem);
+}
+
+p {
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.mini,
+.eyebrow {
+  font-size: .72rem;
+  letter-spacing: .18em;
+  font-weight: 700;
+  color: #a85b78;
+}
+
+.bear {
+  font-size: 7rem;
+  margin: 20px;
+  filter: drop-shadow(0 12px 8px #c98aa255);
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.heart {
+  font-size: 2rem;
+  position: absolute;
+  animation: pulse 1s infinite;
+}
+
+.primary,
+.yes,
+.no {
+  border: 0;
+  border-radius: 999px;
+  padding: 15px 24px;
+  font: 700 1rem "DM Sans";
+  cursor: pointer;
+  box-shadow: 0 8px 0 #b94870;
+  transition: .15s transform;
+  background: var(--pink);
+  color: white;
+}
+
+.primary:hover,
+.yes:hover {
+  transform: translateY(-3px);
+}
+
+.primary:active,
+.yes:active {
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 #b94870;
+}
+
+.card {
+  width: min(620px, 100%);
+  background: #fffdf9cc;
+  border: 2px solid white;
+  border-radius: 34px;
+  padding: clamp(25px, 6vw, 52px);
+  box-shadow: 0 24px 70px #b7587b25;
+  backdrop-filter: blur(10px);
+}
+
+.bouquet {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin: 18px;
+}
+
+.note {
+  background: #fff0f5;
+  border: 1px dashed #e88aac;
+  padding: 14px;
+  border-radius: 16px;
+  margin: 20px 0;
+}
+
+.bigface {
+  font-size: 6rem;
+  animation: float 2s infinite;
+}
+
+.tiny {
+  font-size: .85rem;
+  opacity: .7;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  min-height: 90px;
+  align-items: center;
+}
+
+.yes {
+  background: #f56698;
+}
+
+.no {
+  background: #fff;
+  color: #a44c6b;
+  box-shadow: 0 7px 0 #e9b5c8;
+  position: relative;
+}
+
+.linkbtn {
+  border: 0;
+  background: none;
+  color: #b34e73;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.meter {
+  height: 18px;
+  border-radius: 20px;
+  background: #ffe0e9;
+  overflow: hidden;
+  margin-top: 24px;
+}
+
+.meter div {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #f68a9e, #ff527d);
+  transition: width .35s;
+}
+
+.meterlabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: .75rem;
+  font-weight: 700;
+  margin-top: 7px;
+}
+
+.dollzone {
+  height: 280px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doll {
+  position: relative;
+  transition: .1s;
+  user-select: none;
+}
+
+.head {
+  font-size: 5rem;
+}
+
+.body {
+  font-size: 3rem;
+  line-height: .8;
+  color: #bc846e;
+  font-weight: 900;
+}
+
+.label {
+  background: #fff0c7;
+  padding: 4px 10px;
+  transform: rotate(-5deg);
+  font-size: .7rem;
+  font-weight: 900;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 48%;
+  translate: -50% 0;
+}
+
+#stick {
+  position: absolute;
+  left: 12%;
+  top: 35%;
+  font-size: 4rem;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  transform: rotate(-35deg);
+  z-index: 3;
+}
+
+.ouch {
+  position: absolute;
+  top: -20px;
+  right: -95px;
+  font-weight: 900;
+  color: #e05279;
+  opacity: 0;
+  transform: rotate(8deg);
+}
+
+.hit {
+  animation: bonk .25s;
+}
+
+.showouch {
+  animation: pop .55s;
+}
+
+.counter {
+  font-size: .85rem;
+  margin-bottom: 18px;
+}
+
+.hidden {
+  display: none;
+}
+
+.sparkle {
+  font-size: 3rem;
+}
+
+.bearpair {
+  font-size: 5rem;
+  margin: 20px;
+}
+
+.promise {
+  background: #fff1f5;
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.giant {
+  font-size: 1.1rem;
+}
+
+.grass {
+  position: absolute;
+  bottom: 10px;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  white-space: nowrap;
+}
+
+.cloud {
+  position: absolute;
+  font-size: 5rem;
+  opacity: .65;
+}
+
+.c1 {
+  top: 12%;
+  left: 5%;
+  animation: drift 12s infinite;
+}
+
+.c2 {
+  top: 25%;
+  right: 5%;
+  animation: drift 15s infinite reverse;
+}
+
+.petal {
+  position: fixed;
+  top: -40px;
+  z-index: 10;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+.confetti {
+  position: fixed;
+  z-index: 99;
+  pointer-events: none;
+  font-size: 1.5rem;
+  animation: explode 1.8s ease-out forwards;
+}
+
+#loveMsg {
+  font-family: Pacifico, cursive;
+  color: #c94b77;
+  font-size: 1.8rem;
+  margin-top: 20px;
+}
+
+/* ANIMATIONS */
+
+@keyframes float {
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes drift {
+  50% {
+    transform: translateX(50px);
+  }
+}
+
+@keyframes bonk {
+  30% {
+    transform: rotate(10deg) translateX(12px);
+  }
+
+  70% {
+    transform: rotate(-8deg);
+  }
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(.3);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1.2) rotate(8deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(520deg);
+    opacity: .2;
+  }
+}
+
+@keyframes explode {
+  to {
+    transform: translate(var(--x), var(--y)) rotate(500deg);
+    opacity: 0;
+  }
+}
+
+/* IPHONE / MOBILE */
+
+@media(max-width: 500px) {
+  .card {
+    border-radius: 26px;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+
+  #stick {
+    left: 2%;
+  }
+
+  .ouch {
+    right: -55px;
+    font-size: .8rem;
+  }
+}
